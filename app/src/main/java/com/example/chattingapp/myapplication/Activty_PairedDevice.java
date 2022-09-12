@@ -128,7 +128,7 @@ public class Activty_PairedDevice extends AppCompatActivity {
 
         });
 
-
+///insha-allah
     }
 
     private class ServerClass extends Thread {
