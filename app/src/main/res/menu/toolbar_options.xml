@@ -16,6 +16,4 @@
         android:title="Paired Device"
        app:showAsAction="collapseActionView" />
 
-
-
 </menu>

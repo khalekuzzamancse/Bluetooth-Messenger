@@ -6,25 +6,24 @@
     android:layout_width="match_parent"
    android:layout_height="match_parent"
   >
-    <include layout="@layout/appbar_toolbar"
-        />
+<include layout="@layout/custom_toolbar"/>
 
-    <Button
-        android:id="@+id/listen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:text="Listen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <Button-->
+<!--        android:id="@+id/listen"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="72dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:text="Listen"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_below="@+id/listen"
-
         android:background="@android:color/darker_gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listen" />
@@ -35,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/listview"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="168dp"
         android:hint="Message"
         android:textAlignment="center"
         android:textColor="?android:attr/textColorLink"
@@ -69,28 +68,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/writemsg" />
 
-    <Button
-        android:id="@+id/listDevices"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/listview"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="32dp"
-        android:text="List Devices"
-        app:layout_constraintStart_toEndOf="@+id/listen"
-        app:layout_constraintTop_toTopOf="@+id/listen" />
+<!--    <Button-->
+<!--        android:id="@+id/listDevices"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_above="@+id/listview"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="188dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:text="List Devices"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/listen"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/listen" />-->
 
-    <TextView
-        android:id="@+id/status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+<!--    <TextView-->
+<!--        android:id="@+id/status"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
 
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="52dp"
-        android:text="Status"
-        android:textSize="14sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--        android:layout_marginTop="88dp"-->
+<!--        android:layout_marginEnd="276dp"-->
+<!--        android:text="Status"-->
+<!--        android:textSize="14sp"-->
+<!--        android:textStyle="italic"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

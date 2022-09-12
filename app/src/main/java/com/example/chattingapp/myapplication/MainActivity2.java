@@ -1,6 +1,9 @@
 package com.example.chattingapp.myapplication;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -10,6 +13,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -52,8 +58,26 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        Toolbar toolbar=findViewById(R.id.custom_toolbar);
+        setSupportActionBar(toolbar);
+       try {
+           getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+           getSupportActionBar().setTitle("");
+       }
+       catch (NullPointerException exception)
+        {
+            //
+        }
+
+
+
+
+
+
         findViewByIdes();
         bluetoothAdapter=BluetoothAdapter.getDefaultAdapter();
+
+
 
         if(!bluetoothAdapter.isEnabled())
         {
@@ -63,6 +87,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         implementListeners();
     }
+
 
     private void implementListeners() {
 
@@ -144,13 +169,16 @@ public class MainActivity2 extends AppCompatActivity {
     });
 
     private void findViewByIdes() {
-        listen=(Button) findViewById(R.id.listen);
+       // listen=(Button) findViewById(R.id.listen);
+        listen=(Button) findViewById(R.id.ChatActivity_Listen);
         send=(Button) findViewById(R.id.send);
         listView=(ListView) findViewById(R.id.listview);
         msg_box =(TextView) findViewById(R.id.msg);
-        status=(TextView) findViewById(R.id.status);
+      // status=(TextView) findViewById(R.id.status);
+        status=(TextView) findViewById(R.id.ChatActivity_Status);
         writeMsg=(EditText) findViewById(R.id.writemsg);
-        listDevices=(Button) findViewById(R.id.listDevices);
+       // listDevices=(Button) findViewById(R.id.listDevices);
+        listDevices=(Button) findViewById(R.id.ChatActivity_PairedDevice);
     }
 
     private class ServerClass extends Thread
