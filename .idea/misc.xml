@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/divider.xml" value="0.1" />
         <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/message_background.xml" value="0.1" />
         <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/message_writing_background.xml" value="0.1" />
+        <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/tab_indicator.xml" value="0.177" />
         <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_activty_paired_device.xml" value="0.19010416666666666" />
-        <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main2.xml" value="0.4024640657084189" />
         <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/appbar_toolbar.xml" value="0.33" />
         <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/custom_toolbar.xml" value="0.25" />
