@@ -104,7 +104,7 @@ public class MainActivity2 extends AppCompatActivity {
         mConversationView.setAdapter(mConversationArrayAdapter);
         mConversationArrayAdapter.clear();
 
-
+//insha-allah
         findViewByIdes();
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
