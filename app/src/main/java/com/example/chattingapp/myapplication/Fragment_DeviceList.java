@@ -87,7 +87,7 @@ public class Fragment_DeviceList extends Fragment {
             }
             MainActivity2.btArray=btArray;
 
-            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, strings);
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity().getApplicationContext(),R.layout.layout_single_device_name, strings);
             PairedDeviceList.setAdapter(arrayAdapter);
      }
         PairedDeviceList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
