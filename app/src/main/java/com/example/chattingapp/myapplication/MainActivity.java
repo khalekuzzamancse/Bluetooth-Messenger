@@ -5,6 +5,10 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -17,7 +21,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.TableLayout;
 import android.widget.Toast;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
     public static final int REQUEST_ENABLE = 1;
@@ -25,30 +32,64 @@ public class MainActivity extends AppCompatActivity {
     Button disable;
     BluetoothAdapter bluetoothAdapter;
     Intent btEnable;
+    TabLayout tableLayout;
+    ViewPager2 viewPager;
+    Adpater_viewPage_Messanger adpater;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        enable = findViewById(R.id.Bluetooth_enable);
-        disable = findViewById(R.id.Bluetooth_Disable);
-        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        btEnable = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+        tableLayout = findViewById(R.id.TabLayout);
+        viewPager = findViewById(R.id.ViewPager);
+        adpater = new Adpater_viewPage_Messanger(this);
+        viewPager.setAdapter(adpater);
+        tableLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tableLayout.getSelectedTabPosition());
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                tableLayout.getTabAt(position).select();
+                super.onPageSelected(position);
+            }
+        });
+
+
+//        enable = findViewById(R.id.Bluetooth_enable);
+//        disable = findViewById(R.id.Bluetooth_Disable);
+//        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+//        btEnable = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
 
         ///6e511d4f-6bdd-431e-b8a7-78ed8bf801a8
 
 
-        //enabling the bluetooth
 //        enable.setOnClickListener(view -> {
-//            EnableBluetooth();
+//            LoadFragment(new Fragment_DeviceList());
+//
+//           // EnableBluetooth();
 //        });
 //        //disabling the bluetooth
 //        disable.setOnClickListener(view -> {
-//          DisableBlueTooth();
+//         // DisableBlueTooth();
 //        });
-Intent intent=new Intent(this,MainActivity2.class);
-startActivity(intent);
+//Intent intent=new Intent(this,MainActivity2.class);
+//startActivity(intent);
 
 
     }
@@ -90,7 +131,8 @@ startActivity(intent);
 //                bluetoothAdapter.disable();
 //            }
 
-    }
+
+}
 
 
 
