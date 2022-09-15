@@ -93,8 +93,7 @@ public class Fragment_ChatList extends Fragment {
         });
 
 
-
-
+//insha-allah
 
         return view;
     }
