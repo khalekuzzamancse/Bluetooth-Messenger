@@ -15,7 +15,7 @@
         <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/custom_toolbar.xml" value="0.25" />
         <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment__chat_list.xml" value="0.33" />
         <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment__device_list.xml" value="0.33" />
-        <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/layout_recycler_user_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/layout_recycler_user_list.xml" value="0.1" />
         <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/layout_single_device_name.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/layout_single_message.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Khalekuzzaman/AndroidStudioProjects/MyApplication/app/src/main/res/layout/toolbar_2.xml" value="0.20416666666666666" />
@@ -30,12 +30,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.33" />
-      </ProjectState>
-    </option>
   </component>
 </project>

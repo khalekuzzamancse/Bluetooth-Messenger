@@ -163,6 +163,7 @@ public class Fragment_ChatList extends Fragment {
                 btArray[index] = device;
                 strings[index] = device.getName();
                 index++;
+                Log.i("DeviceAddress",device.getAddress());
             }
             MainActivity2.btArray = btArray;
         }

@@ -2,6 +2,7 @@ package com.example.chattingapp.myapplication.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +42,13 @@ public class Adpater_Recycler_UserList extends RecyclerView.Adapter<ViewHolder_r
     public void onBindViewHolder(@NonNull ViewHolder_recycler_UserList holder, int position) {
         String name = list.get(position).Username;
         holder.userName.setText(name);
-        holder.userName.setOnClickListener(view -> {
+//        holder.userName.setOnClickListener(view -> {
+//            Intent intent = new Intent(context, MainActivity2.class);
+//            MainActivity2.DeviceName=holder.userName.getText().toString().trim();
+//            context.startActivity(intent);
+//
+//        });
+        holder.card.setOnClickListener(view -> {
             Intent intent = new Intent(context, MainActivity2.class);
             MainActivity2.DeviceName=holder.userName.getText().toString().trim();
             context.startActivity(intent);
