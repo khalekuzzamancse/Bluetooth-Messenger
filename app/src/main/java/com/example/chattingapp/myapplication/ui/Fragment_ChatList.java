@@ -107,7 +107,7 @@ public class Fragment_ChatList extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment__chat_list, container, false);
-        Button b = view.findViewById(R.id.button);
+       // Button b = view.findViewById(R.id.button);
         db = UserDatabase.getInstance(getActivity());
         checkPermissions();
         intializeDeviceList();

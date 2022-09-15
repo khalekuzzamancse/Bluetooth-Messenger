@@ -50,11 +50,12 @@ public class MainActivity2 extends AppCompatActivity {
     private static final UUID MY_UUID = UUID.fromString("8ce255c0-223a-11e0-ac64-0803450c9a66");
     public static BluetoothDevice[] btArray;
     public static int Cliked;
+    public  static  String DeviceName = "";
     Button listen, listDevices;
     ListView listView;
     TextView msg_box, status;
     EditText writeMsg;
-    String DeviceName = "";
+
     ListView mConversationView;
     ImageButton send;
     TextView UserName;
@@ -130,7 +131,7 @@ public class MainActivity2 extends AppCompatActivity {
         ClientClass clientClass = new ClientClass(btArray[Cliked]);
         clientClass.start();
         if (DeviceName != null) {
-            DeviceName += btArray[Cliked].getName();
+        //    DeviceName += btArray[Cliked].getName();
             UserName.setText(DeviceName);
 
         }

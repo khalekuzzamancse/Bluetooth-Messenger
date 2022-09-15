@@ -92,7 +92,7 @@ public class Fragment_DeviceList extends Fragment {
         PairedDeviceList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                MainActivity2.Cliked=i;
+                MainActivity2.DeviceName=btArray[i].getName();
                 Intent intent=new Intent(getActivity(),MainActivity2.class);
                 startActivity(intent);
             }

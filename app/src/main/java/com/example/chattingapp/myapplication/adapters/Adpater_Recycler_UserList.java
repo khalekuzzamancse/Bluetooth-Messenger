@@ -43,6 +43,7 @@ public class Adpater_Recycler_UserList extends RecyclerView.Adapter<ViewHolder_r
         holder.userName.setText(name);
         holder.userName.setOnClickListener(view -> {
             Intent intent = new Intent(context, MainActivity2.class);
+            MainActivity2.DeviceName=holder.userName.getText().toString().trim();
             context.startActivity(intent);
 
         });
