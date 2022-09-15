@@ -1,4 +1,4 @@
-package com.example.chattingapp.myapplication;
+package com.example.chattingapp.myapplication.ui;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -12,10 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import com.example.chattingapp.myapplication.R;
 
 import java.util.Set;
 

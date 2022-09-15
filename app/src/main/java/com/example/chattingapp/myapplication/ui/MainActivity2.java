@@ -1,4 +1,4 @@
-package com.example.chattingapp.myapplication;
+package com.example.chattingapp.myapplication.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -26,9 +26,16 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.chattingapp.myapplication.Entity_Message;
+import com.example.chattingapp.myapplication.R;
+import com.example.chattingapp.myapplication.UserDatabase;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Set;
 import java.util.UUID;
 
@@ -55,6 +62,8 @@ public class MainActivity2 extends AppCompatActivity {
     SendReceive sendReceive;
     int REQUEST_ENABLE_BLUETOOTH = 1;
     private ArrayAdapter<String> mConversationArrayAdapter;
+    UserDatabase db;
+
     Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message msg) {
@@ -76,8 +85,8 @@ public class MainActivity2 extends AppCompatActivity {
                     byte[] readBuff = (byte[]) msg.obj;
                     String tempMsg = new String(readBuff, 0, msg.arg1);
                     // msg_box.setText(tempMsg);
-
                     mConversationArrayAdapter.add(DeviceName + ": " + tempMsg);
+                    addToDatabase(DeviceName,"Me",tempMsg);
                     break;
             }
             return true;
@@ -102,7 +111,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         mConversationArrayAdapter = new ArrayAdapter<>(this, R.layout.layout_single_message);
         mConversationView.setAdapter(mConversationArrayAdapter);
-        mConversationArrayAdapter.clear();
+        db = UserDatabase.getInstance(this);
 
 //insha-allah
         findViewByIdes();
@@ -114,6 +123,8 @@ public class MainActivity2 extends AppCompatActivity {
             startActivityForResult(enableIntent, REQUEST_ENABLE_BLUETOOTH);
         }
 
+
+
         implementListeners();
 
         ClientClass clientClass = new ClientClass(btArray[Cliked]);
@@ -124,9 +135,12 @@ public class MainActivity2 extends AppCompatActivity {
 
         }
         status.setText("Connecting");
+        getOldChat();
 
 
     }
+
+
 
     private void implementListeners() {
 
@@ -177,6 +191,7 @@ public class MainActivity2 extends AppCompatActivity {
                 sendReceive.write(string.getBytes());
                 mConversationArrayAdapter.add("Me:  " + string);
                 writeMsg.setText("");
+                addToDatabase("Me",DeviceName,string);
             }
         });
     }
@@ -311,5 +326,30 @@ public class MainActivity2 extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+    private  void addToDatabase(String sender,String receiver,String msg)
+    {
+        SimpleDateFormat s = new SimpleDateFormat("ddMMyyyyhhmmss");
+        String time = s.format(new Date());
+//            //
+        Entity_Message message1 = new Entity_Message(sender, receiver, msg,time);
+        db.MessageDAO().insertMessage(message1);
+    }
+    private void getOldChat() {
+        ArrayList<Entity_Message> L = (ArrayList<Entity_Message>) db.MessageDAO().getAllMessage();
+        for(int i=0;i<L.size();i++)
+        {
+            Log.i("DeviceName","entered"+L.size());
+            if(L.get(i).sender.equals(DeviceName)||L.get(i).receiver.equals(DeviceName))
+            {
+                String msg=L.get(i).message;
+                if(L.get(i).sender.equals("Me"))
+                    mConversationArrayAdapter.add("Me: "+msg);
+                else
+                    mConversationArrayAdapter.add(DeviceName+":"+msg);
+                Log.i("DeviceName",msg);
+            }
+        }
+
     }
 }
